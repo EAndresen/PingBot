@@ -1,4 +1,4 @@
-package sample;
+package codes.andresen;
 
 import javafx.application.Platform;
 import javafx.scene.Scene;

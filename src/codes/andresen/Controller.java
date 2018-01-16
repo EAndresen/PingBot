@@ -1,4 +1,4 @@
-package sample;
+package codes.andresen;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

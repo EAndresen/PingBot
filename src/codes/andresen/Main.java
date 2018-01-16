@@ -1,4 +1,4 @@
-package sample;
+package codes.andresen;
 
 import javafx.application.Application;
 import javafx.application.Platform;
