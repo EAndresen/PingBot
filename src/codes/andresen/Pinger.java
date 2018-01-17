@@ -11,12 +11,13 @@ import java.io.*;
 class Pinger {
     private Runtime r;
     private Process p;
+    private CreatePingString createPingString = new CreatePingString();
 
     void ping(String ipInput, String countInput, String sizeInput) throws IOException {
       TextArea textArea = new TextArea();
       createPingWindow(textArea);
 
-      String pingCmd = createPingLine(countInput, sizeInput, ipInput);
+      String pingCmd = createPingString.createPingLine(countInput, sizeInput, ipInput);
 
       Thread thread = createPingThread(pingCmd, textArea);
       thread.start();
@@ -55,15 +56,5 @@ class Pinger {
         stage.setScene(scene);
         stage.setOnHidden(e -> killRuntimeProcess());
         stage.show();
-    }
-
-    private String createPingLine(String countInput, String sizeInput, String ipInput) {
-        if (countInput.equals("-1")){
-            countInput = "-t ";
-        } else {
-            countInput = "-n " + countInput;
-        }
-
-        return "ping " + countInput + " -l " + sizeInput + " " + ipInput;
     }
 }

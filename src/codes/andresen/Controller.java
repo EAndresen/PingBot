@@ -65,7 +65,6 @@ public class Controller {
                 }else {
                     count = countInputTextField.getText();
                 }
-
                 try {
                     pinger.ping(ip, count, size);
                 } catch (IOException e) {

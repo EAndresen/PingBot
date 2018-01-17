@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("ui.fxml"));
-        primaryStage.setTitle("BingBot-Boop");
+        primaryStage.setTitle("BingBot");
         Scene scene =new Scene(root, 260, 183);
         root.getStylesheets().add(getClass().getResource("Stylesheet.css").toString());
         primaryStage.setScene(scene);
