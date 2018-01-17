@@ -3,7 +3,7 @@ package codes.andresen;
 class CreatePingString {
     String createPingLine(String countInput, String sizeInput, String ipInput) {
         if (countInput.equals("-1")){
-            countInput = "-t ";
+            countInput = "-t";
         } else {
             countInput = "-n " + countInput;
         }

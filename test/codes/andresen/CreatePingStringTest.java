@@ -8,7 +8,7 @@ public class CreatePingStringTest {
     private CreatePingString createPingString = new CreatePingString();
 
     @Test
-    public void testCreatePingStringLocal() {
+    public void testCreatePingStringLocalWithCount() {
         String ip = "127.0.0.1";
         String count = "5";
         String size = "1000";
@@ -20,4 +20,16 @@ public class CreatePingStringTest {
         assertEquals(expecting, result);
     }
 
+    @Test
+    public void testCreatePingStringLocalWithInfinite() {
+        String ip = "127.0.0.1";
+        String count = "-1";
+        String size = "1000";
+
+        String result = createPingString.createPingLine(count, size, ip);
+
+        String expecting = "ping -t -l 1000 127.0.0.1";
+
+        assertEquals(expecting, result);
+    }
 }
