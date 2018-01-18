@@ -5,8 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
-import java.io.IOException;
-
 public class Controller {
 
     @FXML
@@ -27,12 +25,13 @@ public class Controller {
     @FXML
     RadioButton infinityRadioButton = new RadioButton();
 
-    private Pinger pinger = new Pinger();
+//    private Pinger pinger = new Pinger();
+    private CalculatePing calculatePing = new CalculatePing();
 
     private String inputStartIP;
     private int inputEndOfEndIP;
-    private int numberOfPings;
     private int infinityPings;
+    private String countInput;
 
     @FXML
     private void initialize() {
@@ -49,29 +48,14 @@ public class Controller {
         button.setOnAction(event -> {
             inputStartIP = ipInputTextField.getText();
             inputEndOfEndIP = Integer.parseInt(ipEndInputTextField.getText());
+            countInput = countInputTextField.getText();
 
-            int pos = inputStartIP.lastIndexOf(".");
-            int endOfFirstIP = Integer.parseInt(inputStartIP.substring(pos+1, inputStartIP.length()));
-            String beginningOfFirstIP = inputStartIP.substring(0, pos);
-            numberOfPings = inputEndOfEndIP - endOfFirstIP +1;
+            calculatePing.calculatePing(inputEndOfEndIP,
+                                        infinityPings,
+                                        inputStartIP,
+                                        countInput,
+                                        sizeInputTextField.getText());
 
-            for(int i = 0; i < numberOfPings; i++){
-                String ip = beginningOfFirstIP + "." + Integer.toString(endOfFirstIP);
-                String count;
-                String size = sizeInputTextField.getText();
-
-                if(infinityPings == -1){
-                    count = "-1";
-                }else {
-                    count = countInputTextField.getText();
-                }
-                try {
-                    pinger.ping(ip, count, size);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                endOfFirstIP++;
-            }
         });
     }
 }
