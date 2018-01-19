@@ -33,8 +33,8 @@
          </rowConstraints>
          <children>
             <Label text="Count:" GridPane.rowIndex="3" />
-            <TextField fx:id="ipInputTextField" prefHeight="25.0" prefWidth="116.0" text="127.0.0.1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="ipEndInputTextField" maxWidth="50.0" text="1" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+            <TextField fx:id="ipInputTextField" prefHeight="25.0" prefWidth="116.0" text="8.8.8.8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="ipEndInputTextField" maxWidth="50.0" text="8" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
             <Label layoutX="11.0" layoutY="75.0" text="IP:" GridPane.rowIndex="1" />
             <TextField fx:id="countInputTextField" layoutX="65.0" layoutY="24.0" prefHeight="25.0" prefWidth="116.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <RadioButton fx:id="infinityRadioButton" mnemonicParsing="false" text="∞" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
@@ -43,7 +43,7 @@
                </font>
             </RadioButton>
             <Label layoutX="11.0" layoutY="28.0" text="Size:" GridPane.rowIndex="4" />
-            <TextField fx:id="sizeInputTextField" layoutX="65.0" layoutY="71.0" prefHeight="25.0" prefWidth="116.0" text="2000" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="sizeInputTextField" layoutX="65.0" layoutY="71.0" prefHeight="25.0" prefWidth="116.0" text="5000" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="." GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label layoutX="38.0" layoutY="94.0" text="Start IP:" GridPane.columnIndex="1" />
             <Label layoutX="92.0" layoutY="57.0" text="End of End IP:" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" />

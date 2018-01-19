@@ -55,6 +55,7 @@ class Pinger {
         scene.getStylesheets().add(getClass().getResource("Stylesheet.css").toString());
         stage.setScene(scene);
         stage.setOnHidden(e -> killRuntimeProcess());
+        stage.setResizable(false);
         stage.show();
     }
 }

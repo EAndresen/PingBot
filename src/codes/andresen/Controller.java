@@ -25,37 +25,27 @@ public class Controller {
     @FXML
     RadioButton infinityRadioButton = new RadioButton();
 
-//    private Pinger pinger = new Pinger();
     private CalculatePing calculatePing = new CalculatePing();
+    private InfinityRadioButtonListener infinityRadioButtonListener = new InfinityRadioButtonListener();
 
     private String inputStartIP;
+    private String countInput;
+    private String size;
     private int inputEndOfEndIP;
     private int infinityPings;
-    private String countInput;
 
     @FXML
     private void initialize() {
-        infinityRadioButton.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            if(infinityRadioButton.isSelected()){
-                countInputTextField.setDisable(true);
-                infinityPings = -1;
-            }else{
-                countInputTextField.setDisable(false);
-                infinityPings = 0;
-            }
-        });
+        infinityRadioButtonListener.infinityRadioButtonListener(infinityRadioButton, countInputTextField);
 
         button.setOnAction(event -> {
             inputStartIP = ipInputTextField.getText();
             inputEndOfEndIP = Integer.parseInt(ipEndInputTextField.getText());
             countInput = countInputTextField.getText();
+            size = sizeInputTextField.getText();
+            infinityPings = infinityRadioButtonListener.getInfinityPings();
 
-            calculatePing.calculatePing(inputEndOfEndIP,
-                                        infinityPings,
-                                        inputStartIP,
-                                        countInput,
-                                        sizeInputTextField.getText());
-
+            calculatePing.calculatePing(inputEndOfEndIP, infinityPings, inputStartIP, countInput, size);
         });
     }
 }

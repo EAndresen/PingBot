@@ -31,3 +31,11 @@
 .text-area .content {
     -fx-background-color: text-area-background ;
 }
+
+.text-field:focused {
+    -fx-focus-color: linear-gradient(#ff8214, #d02c33);
+}
+
+.radio-button:focused{
+    -fx-focus-color: linear-gradient(#ff8214, #d02c33);
+}
