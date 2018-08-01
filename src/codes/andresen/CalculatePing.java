@@ -1,7 +1,5 @@
 package codes.andresen;
 
-import java.io.IOException;
-
 class CalculatePing {
     private Pinger pinger = new Pinger();
 
@@ -12,7 +10,7 @@ class CalculatePing {
                        String size) {
 
         int pos = inputStartIP.lastIndexOf(".");
-        int endOfFirstIP = Integer.parseInt(inputStartIP.substring(pos+1, inputStartIP.length()));
+        int endOfFirstIP = Integer.parseInt(inputStartIP.substring(pos+1));
         String beginningOfFirstIP = inputStartIP.substring(0, pos);
         int numberOfPings = inputEndOfEndIP - endOfFirstIP +1;
 
@@ -25,11 +23,7 @@ class CalculatePing {
             }else {
                 count = countInput;
             }
-            try {
-                pinger.ping(ip, count, size);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            pinger.ping(ip, count, size);
             endOfFirstIP++;
         }
     }

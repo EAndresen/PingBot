@@ -13,7 +13,7 @@ class Pinger {
     private Process p;
     private CreatePingString createPingString = new CreatePingString();
 
-    void ping(String ipInput, String countInput, String sizeInput) throws IOException {
+    void ping(String ipInput, String countInput, String sizeInput) {
       TextArea textArea = new TextArea();
       createPingWindow(textArea);
 
